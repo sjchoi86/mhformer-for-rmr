@@ -20,4 +20,6 @@ Run the command below:
 python3 demo/run_mhformer.py --video sample_video.mp4 --devce mps
 ```
 
+The pose estimation results will be saved into `demo/result/`.
+
 
