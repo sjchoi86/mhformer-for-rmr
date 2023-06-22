@@ -321,7 +321,9 @@ def get_sound(video_path, output_dir, write_sound=True):
         video_clip.audio.write_audiofile(output_dir_sound + output_dir.split('/')[-2]+r".mp3")
     else : 
         print('skip writing sound')
+        
 if __name__ == "__main__":
+    print ("Start pose estimation.")
     parser = argparse.ArgumentParser()
     parser.add_argument('--video', type=str, default='output.mp4', help='input video')
     parser.add_argument('--device', type=str, default='mps', help='device type')
@@ -332,11 +334,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-
     video_path = './demo/video/' + args.video
     video_name = video_path.split('/')[-1].split('.')[0]
     video_ext = '.' + video_path.split('/')[-1].split('.')[-1]
-    output_dir = './demo/save_output/' + video_name + '/'
+    output_dir = './demo/result/' + video_name + '/'
     print(args.write_sound)
     print(args.write_video)
     print(args.write_img)
